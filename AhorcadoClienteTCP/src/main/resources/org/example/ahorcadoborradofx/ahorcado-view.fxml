@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #4D3B52;" stylesheets="@../../../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ahorcadoborradofx.AhorcadoController">
+   <VBox fx:id="contenedorPrincipal" maxHeight="450.0" maxWidth="550.0" prefHeight="400.0" prefWidth="578.0" style="-fx-background-radius: 50; -fx-background-color: #ffc6c7;">
+      <children>
+
+
+          <!-- Pantalla: Introducción del nombre -->
+          <VBox fx:id="pantallaNombre" alignment="CENTER" prefHeight="372.0" prefWidth="550.0" spacing="20">
+              <ImageView fitHeight="116.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@../../../images/logo.png" />
+                  </image>
+                  <VBox.margin>
+                      <Insets top="30.0" />
+                  </VBox.margin>
+              </ImageView>
+              <Label fx:id="estadoLabel" prefHeight="40.0" prefWidth="257.0" text="Introduce tu nombre:" textFill="#cd5681">
+                  <padding>
+                      <Insets bottom="5.0" left="5.0" right="5.0" />
+                  </padding>
+                  <font>
+                      <Font name="System Bold" size="24.0" />
+                  </font>
+              </Label>
+              <TextField fx:id="nombreField" focusTraversable="false" maxWidth="200.0" minHeight="50.0" promptText="Introduce tu nombre..." styleClass="input-textfield" />
+              <Button fx:id="botonEnviarNombre" minHeight="40.0" onAction="#onEnviarNombre" prefWidth="160.0" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Enviar nombre" textFill="#4d3b52">
+                  <font>
+                      <Font size="14.0" />
+                  </font>
+                  <VBox.margin>
+                      <Insets />
+                  </VBox.margin>
+              </Button>
+              <Button minHeight="40.0" onAction="#salir" prefWidth="160.0" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Salir" textFill="#4d3b52">
+                  <VBox.margin>
+                      <Insets bottom="-40.0" />
+                  </VBox.margin>
+                  <font>
+                      <Font size="14.0" />
+                  </font>
+              </Button>
+          </VBox>
+
+          <!-- Pantalla: Selección de modo de juego -->
+          <VBox fx:id="pantallaModo" alignment="CENTER" prefHeight="462.0" prefWidth="550.0" spacing="20">
+              <HBox alignment="BOTTOM_CENTER" prefHeight="138.0" prefWidth="600.0">
+                  <children>
+                      <Label fx:id="modoLabel" text="¿Quieres jugar solo o esperar a otro jugador?" textFill="#cd5681">
+                          <font>
+                              <Font name="System Bold" size="20.0" />
+                          </font>
+                      </Label>
+                  </children>
+              </HBox>
+              <HBox alignment="CENTER" prefHeight="118.0" prefWidth="550.0" spacing="20">
+                  <Button fx:id="botonSolo" minHeight="40.0" onAction="#onJugarSolo" prefWidth="170.0" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Jugar Solo" textFill="#4d3b52">
+                      <font>
+                          <Font size="18.0" />
+                      </font>
+                      <HBox.margin>
+                          <Insets />
+                      </HBox.margin>
+                  </Button>
+                  <Button fx:id="botonEsperar" minHeight="40.0" onAction="#onEsperar" prefWidth="170.0" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Esperar Jugador" textFill="#4d3b52">
+                      <font>
+                          <Font size="18.0" />
+                      </font>
+                      <HBox.margin>
+                          <Insets />
+                      </HBox.margin>
+                  </Button>
+              </HBox>
+              <HBox alignment="CENTER" prefHeight="66.0" prefWidth="550.0">
+                  <children>
+                      <Label fx:id="puntuacionTotal" textFill="#4d3b52">
+                          <font>
+                              <Font size="16.0" />
+                          </font>
+                      </Label>
+                  </children>
+              </HBox>
+              <HBox prefHeight="78.0" prefWidth="600.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                  <children>
+                      <Button minHeight="40.0" onAction="#onCancelar" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Cancelar" textFill="#4d3b52">
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                          <HBox.margin>
+                              <Insets left="30.0" />
+                          </HBox.margin>
+                      </Button>
+                      <Button fx:id="botonPuntuacion" minHeight="40.0" onAction="#mostrarPuntuacion" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Mostrar mi puntuacion total" textFill="#4d3b52">
+                          <HBox.margin>
+                              <Insets />
+                          </HBox.margin>
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                      </Button>
+                  </children>
+                  <VBox.margin>
+                      <Insets />
+                  </VBox.margin>
+              </HBox>
+          </VBox>
+          <!-- Pantalla: Juego -->
+          <VBox fx:id="pantallaJuego" alignment="TOP_CENTER" spacing="15">
+              <HBox alignment="BOTTOM_LEFT" maxHeight="144.0" minHeight="50.0" prefHeight="80.0" prefWidth="600.0">
+                  <children>
+                      <Label fx:id="oponenteLabel" managed="false" textFill="#cd5681" visible="false">
+                          <HBox.margin>
+                              <Insets left="30.0" />
+                          </HBox.margin>
+                          <font>
+                              <Font name="System Bold" size="18.0" />
+                          </font>
+                      </Label>
+                  </children>
+              </HBox>
+              <HBox prefHeight="201.0" prefWidth="600.0">
+                  <children>
+                      <VBox alignment="CENTER" prefHeight="178.0" prefWidth="600.0" spacing="10.0">
+                          <children>
+                              <HBox alignment="CENTER" prefHeight="92.0" prefWidth="600.0">
+                                  <children>
+                                      <VBox alignment="CENTER" prefHeight="106.0" prefWidth="600.0" spacing="10.0">
+                                          <children>
+                                              <Label fx:id="contadorLabel" managed="false" text="15" textFill="#4d3b52" visible="false">
+                                                  <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                  </font>
+                                              </Label>
+                                              <Label fx:id="estado" managed="false" text="Introduzca una letra:" textFill="#cd5681" visible="false">
+                                                  <font>
+                                                      <Font name="System Bold" size="18.0" />
+                                                  </font></Label>
+                                              <Label fx:id="feedback" managed="false" textFill="#cd5681" visible="false">
+                                                  <font>
+                                                      <Font size="14.0" />
+                                                  </font></Label>
+                                              <Label fx:id="palabraLabel" managed="false" style="-fx-font-family: monospace;" text="_______" textFill="#cd5681" visible="false">
+                                                  <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                  </font>
+                                              </Label>
+                                          </children>
+                                      </VBox>
+                                  </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="56.0" prefWidth="600.0" spacing="20.0">
+                                  <children>
+                                      <HBox alignment="CENTER" prefHeight="56.0" prefWidth="335.0">
+                                          <children>
+                                              <Label fx:id="turnoLabel" managed="false" textFill="#4d3b52" visible="false">
+                                                  <HBox.margin>
+                                                      <Insets />
+                                                  </HBox.margin>
+                                                  <font>
+                                                      <Font size="14.0" />
+                                                  </font>
+                                              </Label>
+                                          </children>
+                                          <HBox.margin>
+                                              <Insets left="40.0" />
+                                          </HBox.margin>
+                                      </HBox>
+                                      <HBox alignment="CENTER" prefHeight="38.0" prefWidth="594.0">
+                                          <children>
+                                              <TextField fx:id="letraField" focusTraversable="false" minHeight="50.0" prefWidth="194.0" promptText="Introduce una letra..." styleClass="input-textfield" visible="false">
+                                                  <HBox.margin>
+                                                      <Insets right="40.0" />
+                                                  </HBox.margin>
+                                              </TextField>
+                                              <Button fx:id="enviar" managed="false" minHeight="40.0" minWidth="120.0" onAction="#enviarLetra" prefHeight="37.0" prefWidth="91.0" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Enviar letra" textFill="#4d3b52" visible="false">
+                                                  <HBox.margin>
+                                                      <Insets left="-10.0" />
+                                                  </HBox.margin>
+                                                  <font>
+                                                      <Font size="14.0" />
+                                                  </font>
+                                              </Button>
+                                          </children>
+                                 <HBox.margin>
+                                    <Insets left="-25.0" />
+                                 </HBox.margin>
+                                      </HBox>
+                                  </children>
+                              </HBox>
+                          </children>
+                      </VBox>
+                  </children>
+              </HBox>
+              <HBox alignment="CENTER" prefHeight="61.0" prefWidth="600.0">
+                  <children>
+                      <Label fx:id="intentosLabel" managed="false" style="-fx-font-size: 14px;" textFill="#cd5681" visible="false" />
+                  </children>
+              </HBox>
+              <HBox alignment="CENTER_LEFT" prefHeight="91.0" prefWidth="560.0" VBox.vgrow="ALWAYS">
+                  <children>
+                      <Button fx:id="botonCancelar" managed="false" minHeight="40.0" minWidth="100.0" onAction="#onCancelar2" style="-fx-background-color: #ff8ba7; -fx-background-radius: 15; -fx-border-color: #cd5681; -fx-border-radius: 15;" text="Cancelar" textFill="#4d3b52" visible="false">
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                      </Button>
+                  </children>
+                  <VBox.margin>
+                      <Insets left="40.0" />
+                  </VBox.margin>
+              </HBox>
+          </VBox>
+
+
+          <VBox fx:id="pantallaSaliendo" alignment="CENTER" prefHeight="456.0" prefWidth="550.0" spacing="20.0">
+              <Label fx:id="mensajeSaliendo" managed="false" textFill="#cd5681" visible="false">
+                  <font>
+                      <Font name="System Bold" size="18.0" />
+                  </font>
+              </Label>
+              <Label fx:id="saliendo" managed="false" text="Saliendo..." textFill="#cd5681" visible="false">
+                  <font>
+                      <Font name="System Bold" size="18.0" />
+                  </font>
+              </Label>
+              <ProgressIndicator fx:id="ruedaCarga" managed="false" prefHeight="30" prefWidth="30" style="-fx-progress-color: #cd5681;" visible="false" />
+
+          </VBox>
+      </children>
+   </VBox>
+
+</StackPane>

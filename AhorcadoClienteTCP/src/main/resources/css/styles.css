@@ -1,0 +1,15 @@
+.input-textfield {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-width: 2;
+    -fx-font-size: 14px;
+    -fx-text-fill: #cd5681;
+
+
+}
+
+.input-textfield:focused {
+    -fx-border-color: #cd5681; /* Rosa chicle */
+
+}
