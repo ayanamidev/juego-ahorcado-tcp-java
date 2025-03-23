@@ -18,7 +18,6 @@ import java.util.Optional;
 
 public class AhorcadoController {
 
-    // Configuración de conexión
     private static final String SERVIDOR = "localhost";
     private static final int PUERTO = 65000;
     public Label contadorLabel;
