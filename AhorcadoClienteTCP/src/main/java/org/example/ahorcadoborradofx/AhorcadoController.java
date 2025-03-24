@@ -127,8 +127,8 @@ public class AhorcadoController {
         stage.setOnCloseRequest(event -> {
             Alert alerta = new Alert(Alert.AlertType.CONFIRMATION);
             alerta.setTitle("Confirmación");
-            alerta.setHeaderText("¿Estás seguro de que quieres cancelar la partida?");
-            alerta.setContentText("Perderás tu progreso actual.");
+            alerta.setHeaderText("¿Estás seguro de que quieres salir?");
+            alerta.setContentText("Si estás en partida cancelarás la partida.");
             Optional<ButtonType> resultado = alerta.showAndWait();
             if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
                 enviar("cancelar");
